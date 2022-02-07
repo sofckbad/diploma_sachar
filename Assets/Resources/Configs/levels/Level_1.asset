@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffad3fbf8c242d599b18d4066c961a1, type: 3}
+  m_Name: Level_1
+  m_EditorClassIdentifier: 
+  word: "\u0443\u0442\u043A\u043E\u043D\u043E\u0441\u0430"
+  letters: 430442043a043e043d043e0441043004
+  matrix: 03000000050000000400000002000000
