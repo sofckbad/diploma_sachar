@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,8 @@ public class Letter : MonoBehaviour, ITouchable
     [SerializeField] private float bubbleTriggerRadius;
 
     private Vector3 startPos;
+    
+    public static event Action OnChanged;
     
     private char letter;
 
@@ -93,6 +96,7 @@ public class Letter : MonoBehaviour, ITouchable
         }
         
         transform.position = startPos;
+        OnChanged?.Invoke();
     }
 
     #endregion

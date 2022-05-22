@@ -56,6 +56,14 @@ public class Level : MonoBehaviour
 
         InitializeLetters();
         InitializeBubbles();
+        
+        Letter.OnChanged += OnChanged;
+    }
+
+
+    private void OnChanged()
+    {
+        LayoutRebuilder.MarkLayoutForRebuild(letterContainer);
     }
 
 
@@ -72,6 +80,8 @@ public class Level : MonoBehaviour
 
         DeinitializeLetters();
         DeinitializeBubbles();
+        
+        Letter.OnChanged -= OnChanged;
     }
 
 
