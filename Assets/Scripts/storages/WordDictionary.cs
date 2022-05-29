@@ -21,14 +21,6 @@ public class WordDictionary : ScriptableObject, ISerializationCallbackReceiver
         return words.Contains(word);
     }
 
-
-    #if UNITY_EDITOR
-    public void Reg(IEnumerable<string> newWords)
-    {
-        words = new HashSet<string>(newWords);
-    }
-    #endif
-
     #endregion
 
 

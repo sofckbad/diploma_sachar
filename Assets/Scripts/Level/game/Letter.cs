@@ -12,9 +12,11 @@ public class Letter : MonoBehaviour, ITouchable
     [SerializeField] private float bubbleTriggerRadius;
 
     private Vector3 startPos;
-    
+
+
     public static event Action OnChanged;
-    
+
+
     private char letter;
 
     #endregion
@@ -62,7 +64,10 @@ public class Letter : MonoBehaviour, ITouchable
     public ITouchable StartTouch(Vector3 pos)
     {
         pos.Set(pos.x, pos.y, transform.position.z);
-        if ((pos - transform.position).magnitude < touchRadius)
+        Vector2 size = new Vector2(touchRadius, touchRadius);
+        Rect r = new Rect((Vector2) transform.position - size / 2, size);
+
+        if (r.Contains(pos))
         {
             transform.position = pos;
             return this;
@@ -82,7 +87,7 @@ public class Letter : MonoBehaviour, ITouchable
     public void EndTouch(Vector3 pos)
     {
         var col = Physics2D.OverlapCircle(transform.position, bubbleTriggerRadius);
-        
+
         if (col != null)
         {
             var bubble = col.GetComponent<Bubble>();
@@ -94,7 +99,7 @@ public class Letter : MonoBehaviour, ITouchable
                 }
             }
         }
-        
+
         transform.position = startPos;
         OnChanged?.Invoke();
     }
