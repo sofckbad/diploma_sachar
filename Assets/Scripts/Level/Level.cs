@@ -33,12 +33,6 @@ public class Level : MonoBehaviour
 
 
 
-    #region Properties
-
-    #endregion
-
-
-
     #region Methods
 
     public void Initialize(int index)
